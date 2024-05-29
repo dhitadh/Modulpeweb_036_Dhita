@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Konversi Nilai Angka ke Huruf</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+      }
+
+      input[type="number"] {
+        width: 100px;
+        padding: 5px;
+        font-size: 16px;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+
+      #result {
+        font-size: 24px;
+        font-weight: bold;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Konversi Nilai Angka ke Huruf</h1>
+    <input
+      type="number"
+      id="scoreInput"
+      min="0"
+      max="100"
+      placeholder="Masukkan nilai"
+    />
+    <button onclick="convertScore()">Konversi</button>
+    <div id="result"></div>
+
+    <script>
+      function convertScore() {
+        const scoreInput = document.getElementById("scoreInput");
+        const score = parseFloat(scoreInput.value);
+        let letterGrade;
+
+        if (score >= 0 && score <= 40) {
+          letterGrade = "E";
+        } else if (score >= 41 && score <= 55) {
+          letterGrade = "D";
+        } else if (score >= 56 && score <= 60) {
+          letterGrade = "C";
+        } else if (score >= 61 && score <= 65) {
+          letterGrade = "BC";
+        } else if (score >= 66 && score <= 70) {
+          letterGrade = "B";
+        } else if (score >= 71 && score <= 80) {
+          letterGrade = "AB";
+        } else if (score >= 81 && score <= 100) {
+          letterGrade = "A";
+        } else {
+          letterGrade = "Invalid score";
+        }
+
+        document.getElementById(
+          "result"
+        ).textContent = `Nilai Huruf: ${letterGrade}`;
+      }
+    </script>
+  </body>
+</html>

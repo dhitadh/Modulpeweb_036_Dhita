@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Efek Fade</title>
+    <style>
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      .box {
+        width: 200px;
+        height: 200px;
+        background-color: blue;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        font-weight: bold;
+        color: white;
+        opacity: 1;
+        transition: opacity 0.5s ease;
+      }
+
+      .buttons {
+        display: flex;
+        justify-content: center;
+      }
+
+      .buttons button {
+        margin: 0 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box" id="box"></div>
+      <div class="buttons">
+        <button onclick="fadeIn()">Fade In</button>
+        <button onclick="fadeOut()">Fade Out</button>
+        <button onclick="fadeTo03()">Fade to 0.3</button>
+      </div>
+    </div>
+
+    <script>
+      const box = document.getElementById("box");
+
+      function fadeIn() {
+        box.style.opacity = 1;
+      }
+
+      function fadeOut() {
+        box.style.opacity = 0;
+      }
+
+      function fadeTo03() {
+        box.style.opacity = 0.3;
+      }
+    </script>
+  </body>
+</html>

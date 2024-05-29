@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <title>Contoh implementasi object XMLHttpRequest</title>
+    <script language="JavaScript">
+      function createXMLHttpObject() {
+        var xmlhttp = false;
+        try {
+          xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
+        } catch (e) {
+          try {
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+          } catch (e) {
+            xmlhttp = false;
+          }
+        }
+        if (!xmlhttp && typeof XMLHttpRequest != "undefined") {
+          xmlhttp = new XMLHttpRequest();
+        }
+
+        if (!xmlhttp) {
+          alert("Terjadi kesalahan saat pembuatan XMLHttpRequest object!");
+        }
+
+        return xmlhttp;
+      }
+
+      function requestContent() {
+        reqObj = createXMLHttpObject();
+        reqObj.open("GET", "dataLoad.html", true);
+        reqObj.onreadystatechange = function () {
+          if (reqObj.readyState == 4 && reqObj.status == 200) {
+            document.getElementById("divContent").innerHTML =
+              reqObj.responseText;
+          } else {
+            document.getElementById("divContent").innerHTML = "loading..";
+          }
+        };
+        reqObj.send(null);
+      }
+    </script>
+  </head>
+  <body>
+    <div>
+      Contoh implementasi object XMLHttpRequest untuk berkomunikasi dengan
+      server.
+    </div>
+    <a href="#" onclick="requestContent();">Klik disini untuk load data.</a>
+    <div id="divContent"></div>
+  </body>
+</html>

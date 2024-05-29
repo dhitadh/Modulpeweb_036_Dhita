@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Kotak Berubah Warna</title>
+    <style>
+      .box {
+        width: 150px;
+        height: 150px;
+        background-color: blue;
+        margin: 20px;
+        display: inline-block;
+        text-align: center;
+        line-height: 150px;
+        font-size: 24px;
+        font-weight: bold;
+        color: white;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box" id="box1">Kotak 1</div>
+    <div class="box" id="box2">Kotak 2</div>
+    <div class="box" id="box3">Kotak 3</div>
+    <div class="box" id="box4">Kotak 4</div>
+  </body>
+</html>
+<script>
+  const box1 = document.getElementById("box1");
+  const box2 = document.getElementById("box2");
+  const box3 = document.getElementById("box3");
+  const box4 = document.getElementById("box4");
+
+  box1.addEventListener("dblclick", () => {
+    const randomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+    box1.style.backgroundColor = randomColor;
+  });
+
+  box2.addEventListener("dblclick", () => {
+    const randomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+    box2.style.backgroundColor = randomColor;
+  });
+
+  box3.addEventListener("dblclick", () => {
+    const randomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+    box3.style.backgroundColor = randomColor;
+  });
+
+  box4.addEventListener("dblclick", () => {
+    const randomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+    box4.style.backgroundColor = randomColor;
+  });
+</script>

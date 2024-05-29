@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tombol Tampilkan dan Sembunyikan</title>
+    <style>
+      .image-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
+      .image-container img {
+        max-width: 200px;
+        margin: 0 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Tombol Tampilkan dan Sembunyikan</h1>
+    <div>
+      <button id="show-button">Tampilkan</button>
+      <button id="hide-button">Sembunyikan</button>
+    </div>
+    <div class="image-container">
+      <img src="images/koya1.png" alt="Image 1" id="image1" />
+      <img src="images/cooky.png" alt="Image 2" id="image2" />
+    </div>
+
+    <script>
+      const showButton = document.getElementById("show-button");
+      const hideButton = document.getElementById("hide-button");
+      const images = document.querySelectorAll(".image-container img");
+
+      showButton.addEventListener("click", () => {
+        images.forEach((image) => {
+          image.style.display = "inline-block";
+        });
+      });
+
+      hideButton.addEventListener("click", () => {
+        images.forEach((image) => {
+          image.style.display = "none";
+        });
+      });
+    </script>
+  </body>
+</html>
